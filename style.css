@@ -27,11 +27,13 @@
 
 :root {
   /* Colors */
+  --body-bg: #ececec;
+  
   --calc-bg-primary: #464644;
   --calc-bg-secondary: #2c2c2c;
   
   --calc-btn-number: #333333;
-  --calc-btn-number-hover: #444444;
+  --calc-btn-number-hover: #3d3d3d;
   --calc-btn-operator: #f39c12;
   --calc-btn-operator-hover: #f1c40f;
   --calc-btn-misc: #a5a5a5;
@@ -49,12 +51,6 @@
   
   --calc-display-bg: #464644;
   --calc-display-text: #ffffff;
-  
-  --calc-accent-light: #404040;
-  --calc-accent-dark: #0a0a0a;
-  
-  --calc-btn-clear: #e74c3c;
-  --calc-btn-clear-hover: #c0392b;
 
   --calc-border: #3A3A3C;
   
@@ -118,6 +114,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--body-bg);
 }
 
 .calculator {
@@ -127,6 +124,7 @@ body {
   border: 2px solid var(--calc-border);
   border-radius: var(--rounded-xl);
   background-color: var(--calc-bg-primary);
+  box-shadow: var(--calc-shadow-default);
 }
 
 .calculator__titlebar {
@@ -179,6 +177,7 @@ body {
   align-items: flex-end;
   gap: var(--space-xs);
   padding: var(--space-xs);
+  padding-right: var(--space-sm);
   background-color: var(--calc-display-bg);
 }
 
@@ -188,7 +187,7 @@ body {
 }
 
 .display-text-previous {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
 }
 
 .display-text-current {
@@ -207,19 +206,39 @@ body {
   color: var(--calc-text-primary);
   font-size: var(--text-md);
   font-weight: var(--font-medium);
-  padding: var(--space-md);
+  padding-block: var(--space-md);
+  padding-inline: 1rem;
   border-radius: var(--rounded-full);
-  background-color: var(--calc-btn-number);
+  transition: background-color 100ms;
+  cursor: pointer;
 }
 
 .button-span-2 {
   grid-column: span 2;
+  text-align: left;
+  padding-left: 1.8rem;
+}
+
+.button-number {
+  background-color: var(--calc-btn-number);
+}
+
+.button-number:hover {
+  background-color: var(--calc-btn-number-hover);
 }
 
 .button-operator {
   background-color: var(--calc-btn-operator);
 }
 
+.button-operator:hover {
+  background-color: var(--calc-btn-operator-hover);
+}
+
 .button-misc {
   background-color: var(--calc-btn-misc);
+}
+
+.button-misc:hover {
+  background-color: var(--calc-btn-misc-hover);
 }
