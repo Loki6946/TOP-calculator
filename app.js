@@ -30,8 +30,8 @@ function deleteSingle() {
 }
 
 function operate(num1, operator, num2) {
-  const number1 = parseInt(num1);
-  const number2 = parseInt(num2);
+  const number1 = parseFloat(num1);
+  const number2 = parseFloat(num2);
   switch(operator) {
     case "+":
       return number1 + number2;
