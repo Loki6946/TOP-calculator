@@ -63,10 +63,12 @@ function addOperator(opt) {
       current = operate(previous, operator, current);
       operator = "";
     }
+  if (current) {
     operator = opt;
     previous = current;
     current = "";
     updateDisplay();
+  }
 }
 
 actionButtons.forEach(button => {
