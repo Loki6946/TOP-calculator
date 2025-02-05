@@ -172,7 +172,7 @@ body {
 }
 
 .calculator__display {
-  min-height: 96px;
+  min-height: 97px;
   display: flex;
   flex-direction: column;
   justify-content: center;
